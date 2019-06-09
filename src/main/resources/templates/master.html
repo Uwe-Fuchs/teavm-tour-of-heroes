@@ -1,3 +1,15 @@
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+  <std:foreach var="hero" in="heroes">
+    <li>
+      <span class="badge"><html:text value="hero.id"/></span>&nbsp;<html:text value="hero.name"/>
+    </li>
+  </std:foreach>
+</ul>
+
+
+
 <h2><html:text value="heroNameUppercase"/> Details</h2>
 <div><span>id: </span><html:text value="hero.id"/></div>
 <div>
