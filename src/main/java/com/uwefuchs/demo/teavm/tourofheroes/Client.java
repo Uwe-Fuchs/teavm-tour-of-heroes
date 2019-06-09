@@ -10,7 +10,7 @@ import java.util.Map;
 
 @BindTemplate("templates/master.html")
 public class Client extends ApplicationTemplate {
-    private HeroDto hero = new HeroDto(1, "Windstorm");
+    private HeroDto selectedHero;
     private final Map<Integer, HeroDto> heroesMap = MockHeroesService.getAllHeroes();
 
     public static void main(String[] args) {
@@ -22,16 +22,16 @@ public class Client extends ApplicationTemplate {
         return this.heroesMap.values();
     }
 
-    public HeroDto getHero() {
-        return hero;
+    public HeroDto getSelectedHero() {
+        return selectedHero;
     }
 
-    public void setHero(HeroDto hero) {
-        this.hero = hero;
+    public void setSelectedHero(HeroDto selectedHero) {
+        this.selectedHero = selectedHero;
     }
 
-    public String getHeroNameUppercase() {
-        String name = getHero() != null ? getHero().getName() : "";
+    public String getSelectedHeroNameUppercase() {
+        String name = getSelectedHero() != null ? getSelectedHero().getName() : "";
 
         if (name != null) {
             return name.toUpperCase();
