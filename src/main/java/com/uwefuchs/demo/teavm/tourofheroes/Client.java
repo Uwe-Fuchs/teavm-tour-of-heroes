@@ -2,42 +2,35 @@ package com.uwefuchs.demo.teavm.tourofheroes;
 
 import com.uwefuchs.demo.teavm.tourofheroes.model.HeroDto;
 import com.uwefuchs.demo.teavm.tourofheroes.service.MockHeroesService;
+import com.uwefuchs.demo.teavm.tourofheroes.views.DetailsView;
+import com.uwefuchs.demo.teavm.tourofheroes.views.ListView;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.flavour.widgets.ApplicationTemplate;
+import org.teavm.flavour.widgets.RouteBinder;
 
 import java.util.Collection;
 import java.util.Map;
 
 @BindTemplate("templates/master.html")
-public class Client extends ApplicationTemplate {
-    private HeroDto selectedHero;
-    private final Map<Integer, HeroDto> heroesMap = MockHeroesService.getAllHeroes();
+public class Client extends ApplicationTemplate implements HeroRoute {
 
     public static void main(String[] args) {
         Client client = new Client();
+        new RouteBinder()
+                .withDefault(HeroRoute.class, r -> r.list())
+                .add(client)
+                .update();
+
         client.bind("application-content");
     }
 
-    public Collection<HeroDto> getHeroes() {
-        return this.heroesMap.values();
+    @Override
+    public void list() {
+        setView(new ListView());
     }
 
-    public HeroDto getSelectedHero() {
-        return selectedHero;
-    }
-
-    public void setSelectedHero(HeroDto selectedHero) {
-        this.selectedHero = selectedHero;
-    }
-
-    public String getSelectedHeroNameUppercase() {
-        String name = getSelectedHero() != null ? getSelectedHero().getName() : "";
-
-        if (name != null) {
-            return name.toUpperCase();
-        } else {
-            return "";
-        }
-        
+    @Override
+    public void details(String id) {
+        setView(new DetailsView(id));
     }
 }

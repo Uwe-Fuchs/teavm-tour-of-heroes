@@ -1,17 +1,3 @@
-<h2>My Heroes</h2>
-
-<ul class="heroes">
-  <std:foreach var="hero" in="heroes">
-    <li event:click="setSelectedHero(hero)" attr:class="(selectedHero == hero ? 'selected' : '')">
-      <span class="badge"><html:text value="hero.id"/></span>&nbsp;<html:text value="hero.name"/>
-    </li>
-  </std:foreach>
-</ul>
-
-<std:if condition="selectedHero != null">
-  <h2><html:text value="selectedHeroNameUppercase"/> Details</h2>
-  <div><span>id: </span><html:text value="selectedHero.id"/></div>
-  <label>name:
-    <input type="text" html:value="selectedHero.name" placeholder="name"/>
-  </label>
-</std:if>
+<div>
+  <std:insert fragment="content"/>
+</div>

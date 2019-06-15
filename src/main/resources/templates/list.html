@@ -1,0 +1,9 @@
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+    <std:foreach var="hero" in="heroes">
+        <li event:click="setSelectedHero(hero)" attr:class="(selectedHero == hero ? 'selected' : '')">
+            <span class="badge"><html:text value="hero.id"/></span>&nbsp;<html:text value="hero.name"/>
+        </li>
+    </std:foreach>
+</ul>
