@@ -50,4 +50,8 @@ public class MockHeroesService {
     public static Map<Integer, HeroDto> getAllHeroes() {
         return heroesMap;
     }
+
+    public static HeroDto getHero(int heroId) {
+        return heroesMap.get(heroId);
+    }
 }

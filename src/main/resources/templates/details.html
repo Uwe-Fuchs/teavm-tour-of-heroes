@@ -1,7 +1,13 @@
-<std:if condition="selectedHero != null">
-    <h2><html:text value="selectedHeroNameUppercase"/> Details</h2>
-    <div><span>id: </span><html:text value="selectedHero.id"/></div>
-    <label>name:
-        <input type="text" html:value="selectedHero.name" placeholder="name"/>
-    </label>
-</std:if>
+<div>
+    <std:if condition="selectedHero != null">
+        <h2><html:text value="selectedHeroNameUppercase"/> Details</h2>
+        <div><span>id: </span><html:text value="selectedHero.id"/></div>
+        <label>name:
+            <input type="text" html:value="selectedHero.name" placeholder="name"/>
+        </label>
+    </std:if>
+</div>
+
+<div>
+    <a html:link="route(it).list()">Go back</a>
+</div>
