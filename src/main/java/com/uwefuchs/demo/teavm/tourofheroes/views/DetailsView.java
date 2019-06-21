@@ -31,7 +31,7 @@ public class DetailsView {
         }
     }
 
-    public HeroRoute route(Consumer<String> consumer) {
-        return Routing.build(HeroRoute.class, consumer);
+    public void goBack() {
+        Routing.open(HeroRoute.class).list();
     }
 }
