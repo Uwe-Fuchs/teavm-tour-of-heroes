@@ -11,5 +11,5 @@ public interface HeroRoute extends Route {
     void list();
 
     @Path("/details/{id}")
-    void details(@PathParameter("id") String id);
+    void details(@PathParameter("id") int id);
 }

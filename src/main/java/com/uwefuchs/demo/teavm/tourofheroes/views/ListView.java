@@ -18,6 +18,6 @@ public class ListView {
     }
 
     public void showDetails(HeroDto selectedHero) {
-        Routing.open(HeroRoute.class).details(String.valueOf(selectedHero.getId()));
+        Routing.open(HeroRoute.class).details(selectedHero.getId());
     }
 }

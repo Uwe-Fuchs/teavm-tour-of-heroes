@@ -12,9 +12,8 @@ import java.util.function.Consumer;
 public class DetailsView {
     private HeroDto selectedHero;
 
-    public DetailsView(String heroId) {
-        int id = heroId != null ? Integer.valueOf(heroId) : -1;
-        selectedHero = MockHeroesService.getHero(id);
+    public DetailsView(int heroId) {
+        selectedHero = MockHeroesService.getHero(heroId);
     }
 
     public HeroDto getSelectedHero() {

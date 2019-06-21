@@ -30,7 +30,7 @@ public class Client extends ApplicationTemplate implements HeroRoute {
     }
 
     @Override
-    public void details(String id) {
+    public void details(int id) {
         setView(new DetailsView(id));
     }
 }
