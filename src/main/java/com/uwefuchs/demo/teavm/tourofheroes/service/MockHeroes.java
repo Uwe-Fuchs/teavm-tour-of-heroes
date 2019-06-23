@@ -1,11 +1,11 @@
 package com.uwefuchs.demo.teavm.tourofheroes.service;
 
+import com.uwefuchs.demo.teavm.tourofheroes.model.HeroDto;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.uwefuchs.demo.teavm.tourofheroes.model.HeroDto;
-
-public class MockHeroesService {
+class MockHeroes {
     private static int heroId = 10;
     private static final Map<Integer, HeroDto> heroesMap;
 
@@ -43,15 +43,11 @@ public class MockHeroesService {
         heroesMap.put(id, new HeroDto(id, "Tornado"));
     }
 
-    private static int getNextId() {
+    static int getNextId() {
         return ++heroId;
     }
 
-    public static Map<Integer, HeroDto> getAllHeroes() {
+    static Map<Integer, HeroDto> getAllHeroes() {
         return heroesMap;
-    }
-
-    public static HeroDto getHero(int heroId) {
-        return heroesMap.get(heroId);
     }
 }

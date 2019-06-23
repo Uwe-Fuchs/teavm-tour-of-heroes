@@ -2,19 +2,17 @@ package com.uwefuchs.demo.teavm.tourofheroes.views;
 
 import com.uwefuchs.demo.teavm.tourofheroes.HeroRoute;
 import com.uwefuchs.demo.teavm.tourofheroes.model.HeroDto;
-import com.uwefuchs.demo.teavm.tourofheroes.service.HeroesResource;
-import com.uwefuchs.demo.teavm.tourofheroes.service.MockHeroesService;
+import com.uwefuchs.demo.teavm.tourofheroes.service.HeroesServiceClient;
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 
 import java.util.Collection;
-import java.util.Map;
 
 @BindTemplate("templates/list.html")
 public class ListView {
-    private final HeroesResource heroServiceFacade;
+    private final HeroesServiceClient heroServiceFacade;
 
-    public ListView(HeroesResource heroServiceFacade) {
+    public ListView(HeroesServiceClient heroServiceFacade) {
         this.heroServiceFacade = heroServiceFacade;
     }
 

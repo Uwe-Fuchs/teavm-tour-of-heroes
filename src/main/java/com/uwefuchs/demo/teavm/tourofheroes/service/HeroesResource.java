@@ -13,30 +13,30 @@ import java.util.Collection;
 public interface HeroesResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<HeroDto> getAllHeroes();
+    Collection<HeroDto> getAllHeroes();
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public HeroDto findHero(@PathParam("id") Integer id);
+    HeroDto findHero(@PathParam("id") Integer id);
 
     @GET
     @Path("search")
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<HeroDto> searchHeroesByName(@QueryParam("name") String name);
+    Collection<HeroDto> searchHeroesByName(@QueryParam("name") String name);
 
     @PUT
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateHero(HeroDto HeroDto, @PathParam("id") Integer id);
-    
+    Response updateHero(HeroDto heroDto, @PathParam("id") Integer id);
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createHero(@Context UriInfo uriInfo, HeroDto HeroDto);
+    Response createHero(HeroDto heroDto);
 
     @DELETE
     @Path("{id}")
-    public Response deleteHero(@PathParam("id") Integer id);
+    Response deleteHero(@PathParam("id") Integer id);
 }
