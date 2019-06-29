@@ -2,20 +2,20 @@ package com.uwefuchs.demo.teavm.tourofheroes.views;
 
 import com.uwefuchs.demo.teavm.tourofheroes.HeroRoute;
 import com.uwefuchs.demo.teavm.tourofheroes.model.HeroDto;
-import com.uwefuchs.demo.teavm.tourofheroes.service.HeroesServiceClient;
+import com.uwefuchs.demo.teavm.tourofheroes.service.HeroesFacade;
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.flavour.widgets.BackgroundWorker;
 
 @BindTemplate("templates/details.html")
 public class DetailsView {
-    private final HeroesServiceClient heroServiceFacade;
+    private final HeroesFacade heroesFacade;
     private HeroDto selectedHero;
 
-    public DetailsView(int heroId, HeroesServiceClient heroServiceFacade) {
-        this.heroServiceFacade = heroServiceFacade;
+    public DetailsView(int heroId, HeroesFacade heroesFacade) {
+        this.heroesFacade = heroesFacade;
 
-        new BackgroundWorker().run(() -> selectedHero = heroServiceFacade.findHero(heroId));
+        new BackgroundWorker().run(() -> selectedHero = heroesFacade.findHero(heroId));
     }
 
     public HeroDto getSelectedHero() {
