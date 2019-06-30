@@ -13,4 +13,12 @@ public class MessagesService {
     public void clear() {
         messages.clear();
     }
+
+    public boolean isEmpty() {
+        return messages.isEmpty();
+    }
+
+    public List<String> getMessages() {
+        return messages;
+    }
 }

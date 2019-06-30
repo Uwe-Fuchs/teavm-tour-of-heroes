@@ -1,0 +1,9 @@
+<div>
+    <std:if condition="!empty">
+        <h2>Messages</h2>
+        <std:foreach var="message" in="messages">
+            <html:text value="message"/><br>
+        </std:foreach>
+        <br><button type="button" class="clear" event:click="clear()">clear</button>
+    </std:if>
+</div>
