@@ -20,8 +20,6 @@ public class ListView {
     }
 
     public Collection<HeroDto> getHeroes() {
-        // TODO: send the message _after_ fetching the heroes
-        this.messagesService.add("HeroService: fetched heroes");
         return this.heroesFacade.getAllHeroes();
     }
 

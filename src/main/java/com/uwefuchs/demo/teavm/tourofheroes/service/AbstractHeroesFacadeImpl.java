@@ -7,7 +7,7 @@ public abstract class AbstractHeroesFacadeImpl implements HeroesFacade {
         this.messagesService = messagesService;
     }
 
-    protected MessagesService getMessagesService() {
-        return messagesService;
+    protected void log(String message) {
+        this.messagesService.add("HeroesFacade: " + message);
     }
 }

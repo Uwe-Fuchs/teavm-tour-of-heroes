@@ -12,11 +12,15 @@ public class HeroesFacadeMockImpl extends AbstractHeroesFacadeImpl {
 
     @Override
     public Collection<HeroDto> getAllHeroes() {
+        // TODO: send the message _after_ fetching the heroes
+        this.log("fetched heroes");
         return MockHeroes.getAllHeroes().values();
     }
 
     @Override
     public HeroDto findHero(Integer id) {
+        // TODO: send the message _after_ fetching the hero
+        this.log("fetched hero id=" + id);
         return MockHeroes.getAllHeroes().get(id);
     }
 
@@ -28,6 +32,7 @@ public class HeroesFacadeMockImpl extends AbstractHeroesFacadeImpl {
     @Override
     public void updateHero(HeroDto heroDto, Integer id) {
         MockHeroes.getAllHeroes().put(id, heroDto);
+        this.log("updated hero id=" + id);
     }
 
     @Override
