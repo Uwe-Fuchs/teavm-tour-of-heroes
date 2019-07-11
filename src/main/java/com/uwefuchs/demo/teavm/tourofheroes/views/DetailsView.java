@@ -11,12 +11,10 @@ import org.teavm.flavour.widgets.BackgroundWorker;
 @BindTemplate("templates/details.html")
 public class DetailsView {
     private final HeroesFacade heroesFacade;
-    private final MessagesService messagesService;
     private HeroDto selectedHero;
 
-    public DetailsView(int heroId, HeroesFacade heroesFacade, MessagesService messagesService) {
+    public DetailsView(int heroId, HeroesFacade heroesFacade) {
         this.heroesFacade = heroesFacade;
-        this.messagesService = messagesService;
 
         new BackgroundWorker().run(() -> selectedHero = heroesFacade.findHero(heroId));
     }

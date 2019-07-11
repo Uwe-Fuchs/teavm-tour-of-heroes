@@ -31,12 +31,12 @@ public class Client extends ApplicationTemplate implements HeroRoute {
 
     @Override
     public void list() {
-        setView(new ListView(heroesFacade, messagesService));
+        setView(new ListView(heroesFacade));
     }
 
     @Override
     public void details(int id) {
-        setView(new DetailsView(id, heroesFacade, messagesService));
+        setView(new DetailsView(id, heroesFacade));
     }
 
     public Fragment getMessages() {

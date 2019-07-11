@@ -12,11 +12,9 @@ import java.util.Collection;
 @BindTemplate("templates/list.html")
 public class ListView {
     private final HeroesFacade heroesFacade;
-    private final MessagesService messagesService;
 
-    public ListView(HeroesFacade heroesFacade, MessagesService messagesService) {
+    public ListView(HeroesFacade heroesFacade) {
         this.heroesFacade = heroesFacade;
-        this.messagesService = messagesService;
     }
 
     public Collection<HeroDto> getHeroes() {
