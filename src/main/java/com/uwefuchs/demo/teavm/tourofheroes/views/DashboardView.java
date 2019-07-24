@@ -9,6 +9,7 @@ import org.teavm.flavour.templates.BindTemplate;
 
 import java.util.Collection;
 import java.util.ArrayList;
+import java.util.List;
 
 @BindTemplate("templates/dashboard.html")
 public class DashboardView extends ListView {
@@ -19,9 +20,8 @@ public class DashboardView extends ListView {
 
     @Override
     public Collection<HeroDto> getHeroes() {
-        Collection<HeroDto> heroes = super.getHeroes();
-        Collection<HeroDto> selectedHeroes = new ArrayList<>(5);
+        List<HeroDto> heroes = (List<HeroDto>) super.getHeroes();
 
-        return selectedHeroes;
+        return new ArrayList<HeroDto>(heroes.subList(1, 5));
     }
 }
