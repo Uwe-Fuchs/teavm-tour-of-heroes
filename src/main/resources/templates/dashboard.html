@@ -1,0 +1,11 @@
+<h3>Top Heroes</h3>
+
+<div class="grid grid-pad">
+    <std:foreach var="hero" in="heroes">
+      <a event:click="showDetails(hero)">
+        <div class="module hero">
+          <h4><html:text value="hero.name"/></h4>
+        </div>
+      </a>
+    </std:foreach>
+</div>

@@ -5,6 +5,7 @@ import com.uwefuchs.demo.teavm.tourofheroes.service.HeroesFacadeMockImpl;
 import com.uwefuchs.demo.teavm.tourofheroes.service.MessagesService;
 import com.uwefuchs.demo.teavm.tourofheroes.views.DetailsView;
 import com.uwefuchs.demo.teavm.tourofheroes.views.ListView;
+import com.uwefuchs.demo.teavm.tourofheroes.views.DashboardView;
 import com.uwefuchs.demo.teavm.tourofheroes.views.MessagesView;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.flavour.templates.Fragment;
@@ -32,6 +33,11 @@ public class Client extends ApplicationTemplate implements HeroRoute {
     @Override
     public void list() {
         setView(new ListView(heroesFacade));
+    }
+
+    @Override
+    public void dashboard() {
+        setView(new DashboardView(heroesFacade));
     }
 
     @Override

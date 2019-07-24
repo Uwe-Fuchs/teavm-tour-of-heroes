@@ -10,6 +10,9 @@ public interface HeroRoute extends Route {
     @Path("/")
     void list();
 
+    @Path("/dashboard")
+    void dashboard();
+
     @Path("/details/{id}")
     void details(@PathParameter("id") int id);
 }
