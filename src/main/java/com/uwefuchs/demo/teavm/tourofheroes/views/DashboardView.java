@@ -20,17 +20,21 @@ public class DashboardView extends ListView {
 
     @Override
     public Collection<HeroDto> getHeroes() {
-        List<HeroDto> heroes = (List<HeroDto>) super.getHeroes();
-        List<HeroDto> selectedHeroes = new ArrayList<>(5);        
+        /*Collection<HeroDto> heroes = super.getHeroes();
+        List<HeroDto> selectedHeroes = new ArrayList<>(5);
 
-        /*for (int counter = 0; counter < heroes.size(); counter++) {
+        int counter = 0;
+
+        for (HeroDto hero : heroes) {
             if (counter >= 1 && counter <= 5) {
-                selectedHeroes.add(heroes.get(counter));
+                selectedHeroes.add(hero);
             }
-        }*/
 
-        return selectedHeroes;
+            counter++;
+        }
 
-        //return new ArrayList<HeroDto>(heroes.subList(1, 5));
+        return selectedHeroes;*/
+
+        return new ArrayList<>(super.getHeroes()).subList(1, 5);
     }
 }
