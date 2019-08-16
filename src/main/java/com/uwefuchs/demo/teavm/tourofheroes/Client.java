@@ -28,7 +28,7 @@ public class Client extends ApplicationTemplate implements HeroRoute {
     public static void main(String[] args) {
         Client client = new Client();
         new RouteBinder()
-                .withDefault(HeroRoute.class, HeroRoute::list)
+                .withDefault(HeroRoute.class, HeroRoute::dashboard)
                 .add(client)
                 .update();
 

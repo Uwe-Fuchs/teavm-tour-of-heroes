@@ -4,7 +4,7 @@
 
 <div>
     <std:if condition="selectedHero != null">
-        <h2><html:text value="selectedHeroNameUppercase"/> Details</h2>
+        <h3><html:text value="selectedHeroNameUppercase"/> Details</h3>
         <div><span>id: </span><html:text value="selectedHero.id"/></div>
         <label>name:
             <input type="text" html:value="selectedHero.name" placeholder="name"/>
@@ -15,3 +15,4 @@
 <div>
     <button type="button" event:click="goBack()">Go back</button>
 </div>
+<br>
