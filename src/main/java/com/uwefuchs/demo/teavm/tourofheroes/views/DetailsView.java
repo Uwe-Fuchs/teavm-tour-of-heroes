@@ -24,7 +24,7 @@ public class DetailsView {
     }
 
     public String getSelectedHeroNameUppercase() {
-        String name = selectedHero != null ? selectedHero.getName() : "";
+        String name = getSelectedHero() != null ? getSelectedHero().getName() : "";
 
         if (name != null) {
             return name.toUpperCase();
@@ -35,5 +35,10 @@ public class DetailsView {
 
     public void goBack() {
         Routing.open(HeroRoute.class).list();
+    }
+
+    public void saveHero() {
+        new BackgroundWorker().run(() -> heroesFacade.updateHero(getSelectedHero(), getSelectedHero().getId()));
+        goBack();
     }
 }
